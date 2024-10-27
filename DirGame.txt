@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+typedef enum {E, S, W, N} dir;
+
+void main(void) 
+  {
+    dir c = E;
+    int turn;
+    char key;
+
+    printf("\nEnter Starting Direction: ");
+    scanf("%d", &c);
+
+    while (1) 
+    {
+        printf("\nPress 1 for Left turn, 2 for Right turn: ");
+        scanf("%d", &turn);
+
+        if (turn == 1) 
+           {
+           switch (c) 
+            {
+                case E:
+                    c = N;
+                    break;
+                case S:
+                    c = E;
+                    break;
+                case W:
+                    c = S;
+                    break;
+                case N:
+                    c = W;
+                    break;
+                default:
+                    printf("\nThis cannot be seen");
+                    break;
+            }
+        } 
+        else 
+	   {
+            switch (c) 
+           {
+                case E:
+                    c = S;
+                    break;
+                case S:
+                    c = W;
+                    break;
+                case W:
+                    c = N;
+                    break;
+                case N:
+                    c = E;
+                    break;
+                default:
+                    printf("\nThis cannot be seen");
+                    break;
+            }
+        }
+
+        printf("Current Direction: ");
+        switch (c) 
+       {
+            case E:
+                printf("East\n");
+                break;
+            case S:
+                printf("South\n");
+                break;
+            case W:
+                printf("West\n");
+                break;
+            case N:
+                printf("North\n");
+                break;
+            default:
+                printf("Invalid direction\n");
+                break;
+        }
+
+        printf("Press 'Y' to continue the game: ");
+        fflush(stdin); 
+        scanf(" %c", &key); // Use a space before %c to consume the newline character
+
+        if (key != 'y' && key != 'Y')
+            break;
+    }
+
+    getch();
+}

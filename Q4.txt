@@ -1,0 +1,26 @@
+int getResult(int *A, int n, int ep, int op, int en, int on)
+  {
+     int i;
+     if(A[i]>0)
+	{
+	  for(i=0;i<n;i++)
+  	     {
+ 		if(A[i]%2==0)
+		   ep=ep+A[i];  //even positive
+ 		else
+		   op=op+A[i];	//odd positive
+	     }
+	}
+     else
+	{
+	  for(i=0;i<n;i++)
+  	     {
+ 		if(A[i]%2==0)
+		   en=en+A[i];	//even negative
+ 		else
+		   on=on+A[i];	//odd negative
+	     }
+	}
+
+      return(ep,op,en,on);
+  }

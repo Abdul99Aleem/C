@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <conio.h>
+#define MAX 20
+void doSort(int A[] ,int n)
+  {
+    int i,j,temp;
+    for(i=0;i<n;i++)
+        {
+            for(j=0;j<n-i-1;j++)
+                {
+                    if(A[j]>A[j+1])
+                        {
+                            temp=A[j];
+                            A[j]=A[j+1];
+                            A[j+1]=temp;
+                        }
+                }
+        }
+  }
+int main() {
+    int A[MAX]={0};
+    int B[MAX]={0};
+    int R[MAX]={0};
+    int n,m,i,j;
+    printf("Enter Array 1 index n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+       {
+           printf("\nA[%d]=",i);
+           scanf("%d",&A[i]);
+       }
+    printf("Enter Array 2 index m");
+    scanf("%d",&m);
+    for(i=0;i<m;i++)
+       {
+           printf("\nB[%d]=",i);
+           scanf("%d",&B[i]);
+       }
+    printf("\nArray A is \n");
+    for(i=0;i<n;i++)
+       {
+           printf("A[%d]=%d\t",i,A[i]);
+       }
+    printf("\nArray B is \n");
+    for(i=0;i<m;i++)
+       {
+           printf("B[%d]=%d\t",i,B[i]);
+       }   
+    doSort(A,n);
+    doSort(B,m);
+    printf("\nAFter sorting A and B are\n");
+    for(i=0;i<n;i++)
+       {
+           printf("A[%d]=%d\t",i,A[i]);
+       } 
+    for(i=0;i<m;i++)
+       {
+           printf("B[%d]=%d\t",i,B[i]);
+       } 
+    for(i=0;i<n;i++)
+        {
+            R[i]=A[i];
+        }
+    for(i=0;i<m;i++)
+        {
+            R[i+n]=B[i];
+        }
+    doSort(R,m+n);
+    printf("\nRequired Array is \n");
+    for(i=0;i<n+m;i++)
+       {
+           printf("R[%d]=%d\t",i,R[i]);
+       }
+    return 0;
+}

@@ -1,0 +1,43 @@
+#include <stio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+void main(void)
+  {
+    FILE *fp=NULL;
+    FILE *fp1=NULL;
+    char ch;
+    int words,sen,lin;
+    clrscr();
+    fp=fopen("data.txt","r");
+    //if(fp===null) exit 0;
+     while ((ch = fgetc(fp)) != EOF)
+        {
+          if (ch == ' ') 
+                words++;
+            
+              if (ch == '.' || ch == '?' || ch == '!')
+                sen++;
+                
+              if (ch == '\n') 
+                lin++;
+            }
+        }
+    
+    //Copying data to another file with uppercasing
+    
+    fp1=fopen("data1.txt","w");
+    
+    do
+      {
+        ch=fgetc(fp);
+        if(ch>='a' && ch<='z')
+            ch-=32;
+        fputc(ch,fp1);
+      }while(ch!=EOF);
+    
+    printf("\nUpdated successfullying Closing files");
+    fclose(fp);
+    fclose(fp1);
+    getch();
+  }

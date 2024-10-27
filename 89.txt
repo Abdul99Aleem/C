@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+void main(void)
+  {
+    FILE *fp=NULL;
+    FILE *fp1=NULL;
+    FILE *fp2=NULL;
+    char ch;
+    clrscr();
+    fp=fopen("data.txt","r");
+    fp1=fopen("data1.txt","r");
+    fp2=fopen("data2.txt","w");
+    //if(fp==null || fp1==null) exit 0;
+    printf("\nPrinting data from first file into new file")
+     do
+        {
+          ch=getchar(fp);
+          fputc(ch,fp2)
+        }while(ch!=EOF);
+    printf("\nPrinting data from second file into new file")
+     do
+        {
+          ch=getchar(fp1);
+          fputc(ch,fp2)
+        }while(ch!=EOF);
+   
+    printf("\nUpdated successfullying Closing files");
+    fclose(fp);
+    fclose(fp1);
+    fclose(fp2);
+    getch();
+  }

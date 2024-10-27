@@ -1,0 +1,45 @@
+
+#include <stdio.h>
+#include <conio.h>
+#define MAX 20
+void NewArr(int A[] ,int n)
+  {
+    int i,j=0;
+    int temp[MAX]={0};
+    for(i=0;i<n;i++)
+      {
+          if(A[i]%3==0)
+            temp[j++]=A[i];
+      }
+    for(i=0;i<n;i++)
+      {
+          if(A[i]%3!=0)
+            temp[j++]=A[i];
+          
+      }
+    for(i=0;i<n;i++)
+        A[i]=temp[i];
+  }
+int main() {
+    int A[MAX]={0};
+    int n,i,j;
+    printf("Enter n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+       {
+           printf("\nA[%d]=",i);
+           scanf("%d",&A[i]);
+       }
+    printf("\nArray is \n")
+    for(i=0;i<n;i++)
+       {
+           printf("A[%d]=%d\t",i,A[i]);
+       }
+    NewArr(A,n);
+    printf("\nRequired Array is \n")
+    for(i=0;i<n;i++)
+       {
+           printf("A[%d]=%d\t",i,A[i]);
+       }
+    return 0;
+}

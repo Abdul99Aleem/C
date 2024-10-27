@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+void main(void)
+  {
+     FILE *fp=NULL;
+     char key;
+     clrscr();
+     fp=fopen("data.txt","w");
+     //if(fp==NULL)
+ 	{
+	  printf("\nNo Access !!);
+ 	  getch();
+	  exit(0);
+	}
+      printf("\nEnter data \n Enter '$' to Stop");
+      do
+	{
+	  key=getchar();
+	  fputc(key,fp);
+	}while(key!='$');
+
+      fclose(fp);
+
+    getch();
+  }
