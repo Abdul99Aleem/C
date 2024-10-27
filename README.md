@@ -1,2 +1,2 @@
-Hello
-This incudes some of my works of C programming which I've done in my first semester 
+# Hello all :) <\b>
+# This incudes some of my works of C programming which I've done in my first semester 
